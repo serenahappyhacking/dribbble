@@ -1,5 +1,3 @@
-import fetch from "cross-fetch";
-
 export const REQUEST_SEARCH = "REQUEST_SEARCH";
 const requestSearch = text => {
   return {

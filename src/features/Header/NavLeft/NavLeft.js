@@ -3,7 +3,70 @@ import "./NavLeft.css";
 
 class NavLeft extends Component {
   render() {
-    return <div className="navleft">xxx</div>;
+    return (
+      <ul className="nav_left">
+        <li>
+          <a href="/">Shots</a>
+          <ul>
+            <li>Popular Shots</li>
+            <li>Recent Shots</li>
+            <li>Debuts</li>
+            <li>Playoffs</li>
+            <li>Followings</li>
+          </ul>
+        </li>
+        <li>
+          <a href="/">Shots</a>
+          <ul>
+            <li>Popular Shots</li>
+            <li>Recent Shots</li>
+            <li>Debuts</li>
+            <li>Playoffs</li>
+            <li>Followings</li>
+          </ul>
+        </li>
+        <li>
+          <a href="/">Shots</a>
+          <ul>
+            <li>Popular Shots</li>
+            <li>Recent Shots</li>
+            <li>Debuts</li>
+            <li>Playoffs</li>
+            <li>Followings</li>
+          </ul>
+        </li>
+        <li>
+          <a href="/">Shots</a>
+          <ul>
+            <li>Popular Shots</li>
+            <li>Recent Shots</li>
+            <li>Debuts</li>
+            <li>Playoffs</li>
+            <li>Followings</li>
+          </ul>
+        </li>
+        <li>
+          <a href="/">Shots</a>
+          <ul>
+            <li>Popular Shots</li>
+            <li>Recent Shots</li>
+            <li>Debuts</li>
+            <li>Playoffs</li>
+            <li>Followings</li>
+          </ul>
+        </li>
+        <li>
+          <a href="/">Shots</a>
+          <ul>
+            <li>Popular Shots</li>
+            <li>Recent Shots</li>
+            <li>Debuts</li>
+            <li>Playoffs</li>
+            <li>Followings</li>
+          </ul>
+        </li>
+      </ul>
+    );
   }
 }
 

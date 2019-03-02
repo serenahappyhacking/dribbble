@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavLeft from "./NavLeft/NavLeft";
 import NavRight from "./NavRight/NavRight";
-import "Header.css";
+import "./Header.css";
 
 class Header extends Component {
   render() {
