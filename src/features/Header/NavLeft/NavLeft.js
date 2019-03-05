@@ -1,14 +1,8 @@
 import React, { Component } from "react";
 import "./NavLeft.css";
 import Dropdown from "../Dropdown/Dropdown";
-import { fetchNavData } from "../redux/action";
-
 
 class NavLeft extends Component {
-  componentDidMount() {
-    this.props.dispatch(fetchNavData());
-  }
-
   render() {
     const { navItems } = this.props;
     return (

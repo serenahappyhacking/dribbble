@@ -4,8 +4,13 @@ import NavRight from "./NavRight/NavRight";
 import "./Header.css";
 import logo from "./assets/logo.gif";
 import { connect } from "react-redux";
+import { fetchNavData, fetchSearchForm } from "../redux/action";
 
 class Header extends Component {
+  componentDidMount() {
+    this.props.dispatch(fetchNavData());
+  }
+
   render() {
     return (
       <div className="header">
@@ -24,5 +29,24 @@ class Header extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    navItems: state.navItems
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSearchForm: text => {
+      dispatch(fetchSearchForm(text));
+    }
+  };
+};
+
+Header = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Header);
 
 export default Header;
