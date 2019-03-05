@@ -3,6 +3,7 @@ import NavLeft from "./NavLeft/NavLeft";
 import NavRight from "./NavRight/NavRight";
 import "./Header.css";
 import logo from "./assets/logo.gif";
+import { connect } from "react-redux";
 
 class Header extends Component {
   render() {

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "../features/Header/Header";
 import Footer from "../features/Footer/Footer";
 import "./App.css";
+import "./normalize.css";
 
 class App extends Component {
   render() {

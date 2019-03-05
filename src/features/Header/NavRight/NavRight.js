@@ -13,12 +13,20 @@ class NavRight extends Component {
           </a>
         </li>
         <li className="t_profile">
-          <img src={profile} alt="my profile" />
+          <img src={profile} alt="my profile" className="has_sublist" />
           <ul className="inner_list">
-            <li>Serena</li>
-            <li>Buckets</li>
-            <li>Account settings</li>
-            <li>Sign out</li>
+            <li>
+              <a href="/serena">Serena</a>
+            </li>
+            <li>
+              <a href="/buckets">Buckets</a>
+            </li>
+            <li>
+              <a href="/account">Account settings</a>
+            </li>
+            <li>
+              <a href="/signout">Sign out</a>
+            </li>
           </ul>
         </li>
         <li className="t_upload">

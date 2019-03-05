@@ -1,0 +1,13 @@
+.dropdown .t_more a > span {
+  color: transparent;
+  background-image: url("../assets/dots.png");
+  background-repeat: no-repeat;
+}
+
+.dropdown .inner_list {
+  font-size: 0.81rem;
+}
+
+.dropdown li {
+  position: relative;
+}

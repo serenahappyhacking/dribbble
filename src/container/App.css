@@ -1,10 +1,25 @@
+:root {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
+    sans-serif;
+  color: #444;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
 ul {
   padding-left: 0;
 }
 
 li {
   list-style-type: none;
-  display: inline-block;
 }
 
 a {

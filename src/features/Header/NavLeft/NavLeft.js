@@ -1,72 +1,40 @@
 import React, { Component } from "react";
 import "./NavLeft.css";
+import Dropdown from "../Dropdown/Dropdown";
+import { fetchNavData } from "../redux/action";
+
 
 class NavLeft extends Component {
+  componentDidMount() {
+    this.props.dispatch(fetchNavData());
+  }
+
   render() {
+    const { navItems } = this.props;
     return (
       <ul className="nav_left">
-        <li className="t_shots">
-          <a href="/">Shots</a>
-          <ul className="inner_list">
-            <li>Popular Shots</li>
-            <li>Recent Shots</li>
-            <li>Debuts</li>
-            <li>Playoffs</li>
-            <li>Followings</li>
-          </ul>
-        </li>
-        <li className="t_designers">
-          <a href="/">Designers</a>
-          <ul className="inner_list">
-            <li>Popular Shots</li>
-            <li>Recent Shots</li>
-            <li>Debuts</li>
-            <li>Playoffs</li>
-            <li>Followings</li>
-          </ul>
-        </li>
-        <li className="t_teams">
-          <a href="/">Teams</a>
-          <ul className="inner_list">
-            <li>Popular Shots</li>
-            <li>Recent Shots</li>
-            <li>Debuts</li>
-            <li>Playoffs</li>
-            <li>Followings</li>
-          </ul>
-        </li>
-        <li className="t_community">
-          <a href="/">Community</a>
-          <ul className="inner_list">
-            <li>Popular Shots</li>
-            <li>Recent Shots</li>
-            <li>Debuts</li>
-            <li>Playoffs</li>
-            <li>Followings</li>
-          </ul>
-        </li>
-        <li className="t_jobs">
-          <a href="/">Jobs</a>
-          <ul className="inner_list">
-            <li>Popular Shots</li>
-            <li>Recent Shots</li>
-            <li>Debuts</li>
-            <li>Playoffs</li>
-            <li>Followings</li>
-          </ul>
-        </li>
-        <li className="t_more">
-          <a href="/">
-            <span>More</span>
-          </a>
-          <ul className="inner_list">
-            <li>Popular Shots</li>
-            <li>Recent Shots</li>
-            <li>Debuts</li>
-            <li>Playoffs</li>
-            <li>Followings</li>
-          </ul>
-        </li>
+        <Dropdown
+          title={"Shots"}
+          items={navItems.shots}
+          className={"t_shots"}
+        />
+        <Dropdown
+          title={"Designers"}
+          items={navItems.designers}
+          className={"t_designers"}
+        />
+        <Dropdown
+          title={"Teams"}
+          items={navItems.teams}
+          className={"t_teams"}
+        />
+        <Dropdown
+          title={"Community"}
+          items={navItems.community}
+          className={"t_community"}
+        />
+        <Dropdown title={"Jobs"} items={navItems.jobs} className={"t_jobs"} />
+        <Dropdown title={"More"} items={navItems.more} className={"t_more"} />
       </ul>
     );
   }
