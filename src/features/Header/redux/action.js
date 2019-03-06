@@ -1,11 +1,11 @@
 import { navItems } from "../../../model/header";
-
+console.log(navItems);
 /* fetch nav data */
 export const REQUEST_NAV = "REQUEST_NAV";
-const requestNav = data => {
+const requestNav = reqState => {
   return {
     type: REQUEST_NAV,
-    data
+    reqState
   };
 };
 
@@ -17,33 +17,18 @@ const receiveNav = data => {
   };
 };
 
-export const fetchNavData = async dispatch => {
-  dispatch(requestNav);
-  return await (() => {
-    return new Promise(reject => {
-      fetch(`/fetch/navdata`)
-        .then(() => dispatch(receiveNav(navItems)))
-        .then(error => reject(error));
-    });
-  })();
+const fetchNavDataPromise = dispatch => {
+  return new Promise((resolve, reject) => {
+    fetch(`/fetch/navdata`)
+      .then(() => dispatch(receiveNav(navItems)))
+      .then(error => reject(error));
+  });
 };
 
-// export const fetchNavData = () => {
-//   return dispatch => {
-//     dispatch(requestNav);
-//     return fetch(`/fetch/navdata`)
-//       .then(data => dispatch(receiveNav(data)))
-//       .then(error => reject(error));
-//   };
-// };
-
-// const resolveNavData = () => {
-//   return new Promise((resolve, reject) => {
-//     fetch(`/fetch/navdata`)
-//       .then(data => resolve(data))
-//       .then(error => reject(error));
-//   });
-// };
+export const fetchNavData = async dispatch => {
+  dispatch(requestNav);
+  return await fetchNavDataPromise(dispatch);
+};
 
 /* fetch Search form data */
 export const REQUEST_SEARCH = "REQUEST_SEARCH";
@@ -62,11 +47,15 @@ const receiveSearch = data => {
   };
 };
 
-export const fetchSearchForm = text => {
-  return dispatch => {
-    dispatch(requestSearch(text));
-    return fetch(`/fetch/${text}`)
+const fetchSearchFormPromise = (dispatch, text) => {
+  return new Promise(() => {
+    fetch(`/fetch/${text}`)
       .then(data => dispatch(receiveSearch(data)))
       .then(error => `Error occured. ${error}`);
-  };
+  });
+};
+
+export const fetchSearchForm = async (dispatch, text) => {
+  dispatch(requestSearch(text));
+  await fetchSearchFormPromise(dispatch, text);
 };
