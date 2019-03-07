@@ -4,9 +4,9 @@ import mainReducer from "./reducers/mainReducer";
 import footerReducer from "./reducers/footerReducer";
 
 const rootReducer = combineReducers({
-  headerReducer,
-  mainReducer,
-  footerReducer
+  header: headerReducer,
+  main: mainReducer,
+  footer: footerReducer
 });
 
 export default rootReducer;

@@ -1,5 +1,4 @@
 export const header = {
-  isFetching: false,
   navItems: {
     shots: ["Popular Shots", "Recent Shots", "Debuts", "Playoffs", "Playoffs"],
     designers: [

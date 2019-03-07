@@ -1,4 +1,5 @@
 import { header } from "../model/header";
+import { contentSrc } from "../model/content";
 
 /* Header --- fetch nav data */
 export const REQUEST_NAV = "REQUEST_NAV";
@@ -16,15 +17,14 @@ const receiveNav = data => {
   };
 };
 
-export const fetchNavData = dispatch => {
-  console.log(`hahahah`);
+export const fetchNavData = () => {
   return dispatch => {
     dispatch(requestNav());
-    return fetch(`/fetch/navdata`).then(dispatch =>
-      dispatch(receiveNav(header.navItems)).then(
-        error => `Error occurred. ${error}`
-      )
-    );
+    Promise.resolve(header.navItems)
+      .then(data => {
+        dispatch(receiveNav(data));
+      })
+      .catch(err => console.log(err));
   };
 };
 
@@ -45,12 +45,10 @@ const receiveSearch = data => {
   };
 };
 
-export const fetchSearchForm = (dispatch, text) => {
+export const fetchSearchForm = text => {
   return dispatch => {
     dispatch(requestSearch(text));
-    fetch(`/fetch/${text}`)
-      .then(data => dispatch(receiveSearch(data)))
-      .then(error => `Error occurred. ${error}`);
+    Promise.resolve(contentSrc).then(data => dispatch(receiveSearch(data)));
   };
 };
 

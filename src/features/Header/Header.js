@@ -21,8 +21,8 @@ class Header extends Component {
             </a>
           </div>
           <div className="nav">
-            <NavLeft />
-            <NavRight />
+            <NavLeft navItems={this.props.navItems} />
+            <NavRight navItems={this.props.navItems} />
           </div>
         </div>
       </div>
@@ -31,7 +31,6 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     navItems: state.header.navItems
   };

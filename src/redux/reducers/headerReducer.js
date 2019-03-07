@@ -5,17 +5,15 @@ const initialState = {
   navItems: {}
 };
 
-const headerReducer = (state = initialState, action) => {
+const header = (state = initialState, action) => {
   switch (action.type) {
     case REQUEST_NAV:
-      console.log(`lalalal`);
       return { ...state, ...{ isFetching: true } };
     case RECEIVE_NAV:
-      console.log(state.header);
-      return { isFetching: false, navItems: action.header.data };
+      return { isFetching: false, navItems: action.data };
     default:
       return state;
   }
 };
 
-export default headerReducer;
+export default header;
