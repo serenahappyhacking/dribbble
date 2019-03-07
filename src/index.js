@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
-import configStore from "./common/configStore";
+import configStore from "./redux/configStore";
 import App from "./container/App";
 import "./index.css";
 

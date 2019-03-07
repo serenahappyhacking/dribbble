@@ -1,14 +1,14 @@
 import React, { Component } from "react";
 import NavLeft from "./NavLeft/NavLeft";
 import NavRight from "./NavRight/NavRight";
-import "./Header.css";
 import logo from "./assets/logo.gif";
 import { connect } from "react-redux";
-import { fetchNavData, fetchSearchForm } from "./redux/action";
+import { fetchNavData, fetchSearchForm } from "../../redux/action";
+import "./Header.css";
 
 class Header extends Component {
   componentDidMount() {
-    this.props.dispatch(fetchNavData());
+    this.props.onFetchNavData();
   }
 
   render() {
@@ -31,22 +31,24 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    navItems: state.navItems
+    navItems: state.header.navItems
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
+    onFetchNavData: () => {
+      dispatch(fetchNavData());
+    },
     onSearchForm: text => {
       dispatch(fetchSearchForm(text));
     }
   };
 };
 
-Header = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Header);
-
-export default Header;

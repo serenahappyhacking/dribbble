@@ -3,7 +3,7 @@ import "./Main.css";
 import MenuTab from "./MenuTab/MenuTab";
 import Content from "./Content/Content";
 import { connect } from "react-redux";
-import {} from "./redux/action";
+import {} from "../../redux/action";
 
 class Main extends Component {
   componentDidMount() {}
@@ -24,9 +24,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {};
 
-Main = connect(
+export default connect(
   mapStateToProps,
   mapDispatchToProps
 )(Main);
-
-export default Main;
