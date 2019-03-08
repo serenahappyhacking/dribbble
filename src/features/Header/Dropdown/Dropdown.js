@@ -18,21 +18,20 @@ class Dropdown extends Component {
   };
 
   render() {
-    const { title, items, className } = this.props;
+    const { children, items, className } = this.props;
     return (
-      <div className="dropdown">
-        <a
-          href="/"
-          className="has_sublist"
-          onMouseOver={this.handleMouseOver}
-          onMouseOut={this.handleMouseOut}
-        >
-          {title}
+      <div
+        className="dropdown"
+        onMouseOver={this.handleMouseOver}
+        onMouseOut={this.handleMouseOut}
+      >
+        <a href="/" className={`has_sublist ${className}`}>
+          <div>{children}</div>
         </a>
         <ul className="inner_list" style={{ display: this.state.isShow }}>
-          {items.map(item => {
+          {items.map((item, index) => {
             return (
-              <li className={`${className}`}>
+              <li key={index}>
                 <a href={`/${item}`}>
                   <span>{item}</span>
                 </a>

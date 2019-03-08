@@ -1,7 +1,8 @@
 import React, { Component } from "react";
-import "./NavRight.css";
 import profile from "../assets/profile.jpg";
 import upload from "../assets/upload.png";
+import Dropdown from "../Dropdown/Dropdown";
+import "./NavRight.css";
 
 class NavRight extends Component {
   render() {
@@ -15,16 +16,9 @@ class NavRight extends Component {
             </a>
           </li>
           <li className="t_profile">
-            <img src={profile} alt="my profile" className="has_sublist" />
-            <ul className="inner_list">
-              {navItems.profile.map(data => {
-                return (
-                  <li>
-                    <a href={`/${data}`}>{data}</a>
-                  </li>
-                );
-              })}
-            </ul>
+            <Dropdown items={navItems.profile} className={`t_profile`}>
+              <img src={profile} alt="My profile" />
+            </Dropdown>
           </li>
           <li className="t_upload">
             <a href="/upload">
@@ -32,7 +26,13 @@ class NavRight extends Component {
             </a>
           </li>
           <li className="t_search">
-            <input placeholder="Search" />
+            <form>
+              <input
+                className="search_text"
+                placeholder="Search"
+                onInput={onSearchForm}
+              />
+            </form>
           </li>
         </ul>
       );

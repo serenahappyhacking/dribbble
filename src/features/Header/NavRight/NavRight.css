@@ -1,7 +1,7 @@
 .nav_right {
   display: inline-flex;
   justify-content: space-around;
-  width: 35%;
+  width: 38%;
   float: right;
 }
 
@@ -13,4 +13,17 @@
   width: 25px;
   height: 25px;
   border-radius: 50%;
+}
+
+.nav_right .t_gopro span {
+  color: #ea4c89;
+}
+
+.nav_right .search_text {
+  background-image: url("../assets/icon-search.png");
+  background-repeat: no-repeat;
+  background-position: 7px 50%;
+  border-radius: 4px;
+  border: none;
+  padding: 0.312em 0.312em 0.312em 2em;
 }
