@@ -19,25 +19,8 @@
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
   color: #757575;
-  width: 90%;
+  width: 96%;
   max-width: 1770px;
-}
-
-.header .inner_list {
-  background: rgba(47, 47, 47, 0.98);
-  border-radius: 6px;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
-  padding: 0 0 10px 0;
-  width: 180px;
-  position: absolute;
-  top: 3em;
-}
-
-.header .inner_list a {
-  font-size: 0.81rem;
-  padding: 0.3em 0.625em;
 }
 
 .header .has_sublist:hover {

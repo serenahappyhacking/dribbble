@@ -12,7 +12,7 @@ class NavLeft extends Component {
             <span>Shots</span>
           </Dropdown>
           <Dropdown items={navItems.designers} className={"t_designers"}>
-            <span>designers</span>
+            <span>Designers</span>
           </Dropdown>
           <Dropdown items={navItems.teams} className={"t_teams"}>
             <span>Teams</span>
