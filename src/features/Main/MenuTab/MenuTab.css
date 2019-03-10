@@ -1,9 +1,23 @@
+.menutab {
+  display: flex;
+}
+
+.menutab .menutab_item {
+  flex-basis: 0;
+  flex-grow: 1;
+}
+
 .menutab .navbar {
   width: 16%;
   margin: 1em auto;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   position: relative;
+}
+
+.menutab .navbar li {
+  padding: 0 1.2em;
 }
 
 .menutab .navbar .droplist {
@@ -14,4 +28,65 @@
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
   padding: 0.5em 0 0.5em 1em;
   margin: 1em 0 0 -1em;
+}
+
+.menutab .action_button {
+  position: relative;
+}
+
+.menutab .action_menu_inner {
+  background-color: #333;
+  border-radius: 4px;
+  padding: 1em 0 0.5em 0;
+  width: 220px;
+  position: absolute;
+  right: 2.5em;
+  top: 2.2em;
+  border-top-right-radius: 0;
+}
+
+.menutab .action_menu_container {
+  float: right;
+}
+
+.menutab .action_menu .action_icon {
+  display: inline-block;
+  background-image: url("../assets/icon-shot-options.png");
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: 4px;
+  padding: 15px;
+  margin: 10px 2.5em 6px 0;
+}
+
+.menutab .action_menu .action_icon.icon_hover {
+  background-color: #333;
+  border-top-right-radius: 4px;
+  border-top-left-radius: 4px;
+}
+
+.menutab .action_menu_inner > span {
+  font-weight: 500;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: #ccc;
+}
+
+.menutab .display_options {
+  display: flex;
+}
+
+.menutab .display_options li {
+  background-color: #505050;
+  padding-left: 5px;
+  margin-left: 5px;
+}
+
+.menutab .display_options li:hover {
+  background-color: #999;
+}
+
+.menutab .display_options svg {
+  width: 42px;
+  height: 42px;
 }
