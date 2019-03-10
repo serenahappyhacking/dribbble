@@ -1,6 +1,7 @@
 .nav_left {
   display: inline-flex;
   justify-content: space-around;
+  align-items: center;
   width: 25%;
   margin-left: 1.5em;
 }

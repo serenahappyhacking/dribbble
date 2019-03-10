@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import NavLeft from "./NavLeft/NavLeft";
 import NavRight from "./NavRight/NavRight";
-import logo from "./assets/logo.gif";
+import logo from "./assets/logo.png";
 import { connect } from "react-redux";
 import { fetchNavData, fetchSearchForm } from "../../redux/action";
 import "./Header.css";

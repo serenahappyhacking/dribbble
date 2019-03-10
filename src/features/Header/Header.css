@@ -5,16 +5,14 @@
 }
 
 .header_inner {
-  padding: 0 2em 0 1em;
-  margin: 0 auto;
-}
-
-.header > .header_inner .logo {
-  display: inline-block;
+  padding: 0 2em;
+  display: flex;
+  align-items: center;
 }
 
 .header > .header_inner .nav {
-  display: inline-block;
+  display: flex;
+  justify-content: space-between;
   font-size: 0.87rem;
   font-family: "Haas Grot Text R Web", "Helvetica Neue", Helvetica, Arial,
     sans-serif;
