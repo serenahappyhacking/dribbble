@@ -1,11 +1,17 @@
-import { REQUEST_SEARCH, RECEIVE_SEARCH } from "../action";
+import {
+  // REQUEST_SEARCH,
+  // RECEIVE_SEARCH,
+  FETCH_DRIBBBLES_IMAGES
+} from "../action";
 
-const initialState = {};
+const initialState = { content: [] };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case REQUEST_SEARCH:
-    case RECEIVE_SEARCH:
+    // case REQUEST_SEARCH:
+    // case RECEIVE_SEARCH:
+    case FETCH_DRIBBBLES_IMAGES:
+      return { ...state, content: [...action.data] };
     default:
       return state;
   }

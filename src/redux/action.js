@@ -1,5 +1,5 @@
-import { header } from "../model/header";
-import { contentSrc } from "../model/content";
+import header from "../model/header";
+import content from "../model/content";
 
 /* Header --- fetch nav data */
 export const REQUEST_NAV = "REQUEST_NAV";
@@ -48,7 +48,22 @@ const receiveSearch = data => {
 export const fetchSearchForm = text => {
   return dispatch => {
     dispatch(requestSearch(text));
-    Promise.resolve(contentSrc).then(data => dispatch(receiveSearch(data)));
+    Promise.resolve(content).then(data => dispatch(receiveSearch(data)));
+  };
+};
+
+/* Main Content --- fetch dribbble imgs */
+export const FETCH_DRIBBBLES_IMAGES = "FETCH_DRIBBBLES_IMAGES";
+const fetchDribbblesImages = data => {
+  return {
+    type: FETCH_DRIBBBLES_IMAGES,
+    data
+  };
+};
+
+export const fetchMainDribbles = () => {
+  return dispatch => {
+    Promise.resolve(content).then(data => dispatch(fetchDribbblesImages(data)));
   };
 };
 

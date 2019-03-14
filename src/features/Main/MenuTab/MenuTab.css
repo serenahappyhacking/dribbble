@@ -1,6 +1,7 @@
 .menutab {
   display: flex;
   border: 1px solid #80808029;
+  background-color: white;
 }
 
 .menutab .menutab_item {
@@ -52,7 +53,7 @@
 
 .menutab .action_menu .action_icon {
   display: inline-block;
-  background-image: url("../assets/icon-shot-options.png");
+  background-image: url("./assets/icon-shot-options.png");
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: 4px;

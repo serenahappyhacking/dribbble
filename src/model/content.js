@@ -1,4 +1,6 @@
-export const contentSrc = [
+import nameIcon from "../features/Main/Content/assets/icon-name.png";
+
+const contentSrc = [
   "https://cdn.dribbble.com/users/32512/screenshots/6…/flights_design_milkinside_for_natural_teaser.png",
   "https://cdn.dribbble.com/users/541143/screenshots/6115502/_well__fitness_appp_teaser.png",
   "https://cdn.dribbble.com/users/1133834/screenshots/6113296/shot_teaser.png",
@@ -96,3 +98,18 @@ export const contentSrc = [
   "https://cdn.dribbble.com/users/925008/screenshots/6112985/ocean_ace_teaser.png",
   "https://cdn.dribbble.com/users/1615086/screenshots/6113577/toxic_teaser.jpg"
 ];
+
+const content = [];
+contentSrc.forEach(s => {
+  content.push({
+    src: s,
+    viewCount: 999,
+    commentCount: 888,
+    favoCount: 666,
+    nameIcon: nameIcon,
+    author: "Cuberto",
+    team: "Team"
+  });
+});
+
+export default content;

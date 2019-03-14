@@ -1,0 +1,24 @@
+.small_info {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1em;
+  margin: 0 3.5em;
+  margin-top: 2.5em;
+}
+
+.small_info .display_imgs {
+  background-color: white;
+}
+
+.small_info .hover_card {
+  margin-top: 1em;
+}
+
+.small_info .tools > div {
+  display: inline-block;
+  margin: 0 0.3em;
+}
+
+.small_info .tools .view {
+  background-image: url("../assets/icon-views-sm.png");
+}

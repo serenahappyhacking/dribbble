@@ -1,4 +1,4 @@
-export const header = {
+const header = {
   navItems: {
     shots: ["Popular Shots", "Recent Shots", "Debuts", "Playoffs", "Playoffs"],
     designers: [
@@ -21,3 +21,5 @@ export const header = {
     profile: ["Serena", "Buckets", "Account settings", "Sign out"]
   }
 };
+
+export default header;

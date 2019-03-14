@@ -1,29 +1,37 @@
 import React, { Component } from "react";
-import "./Main.css";
 import MenuTab from "./MenuTab/MenuTab";
 import Content from "./Content/Content";
 import { connect } from "react-redux";
-import {} from "../../redux/action";
+import { fetchMainDribbles } from "../../redux/action";
+import "./Main.css";
 
 class Main extends Component {
-  componentDidMount() {}
+  componentDidMount() {
+    this.props.onFetchDribbbles();
+  }
 
   render() {
     return (
-      <div className="dribble_main">
+      <div className="dribbble_main">
         <MenuTab />
-        <Content />
+        <Content content={this.props.content} />
       </div>
     );
   }
 }
 
 const mapStateToProps = state => {
-  return {};
+  return {
+    content: state.main.content
+  };
 };
 
 const mapDispatchToProps = dispatch => {
-  return {};
+  return {
+    onFetchDribbbles: () => {
+      dispatch(fetchMainDribbles());
+    }
+  };
 };
 
 export default connect(
