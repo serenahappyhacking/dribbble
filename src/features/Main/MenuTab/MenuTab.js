@@ -8,8 +8,7 @@ class MenuTab extends Component {
     this.state = {
       isShow: "none",
       optionsIsShow: "none",
-      icon_hover: false,
-      tooltipIsShow: "none"
+      icon_hover: false
     };
   }
 
@@ -40,7 +39,6 @@ class MenuTab extends Component {
   };
 
   render() {
-    const { tooltipIsShow } = this.state;
     return (
       <div className="menutab">
         <div className="menutab_item" />
