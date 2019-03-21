@@ -84,6 +84,7 @@
 
 .menutab .display_options li {
   background-color: #505050;
+  margin: 0 2px;
 }
 
 .menutab .display_options li:hover {

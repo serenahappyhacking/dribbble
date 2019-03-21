@@ -8,7 +8,8 @@ class MenuTab extends Component {
     this.state = {
       isShow: "none",
       optionsIsShow: "none",
-      icon_hover: false
+      icon_hover: false,
+      tooltipIsShow: "none"
     };
   }
 
@@ -39,7 +40,7 @@ class MenuTab extends Component {
   };
 
   render() {
-    console.log(this.state);
+    const { tooltipIsShow } = this.state;
     return (
       <div className="menutab">
         <div className="menutab_item" />
@@ -82,76 +83,80 @@ class MenuTab extends Component {
               <span>display options</span>
               <ul className="display_options">
                 <li>
-                  <a href="/">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      preserveAspectRatio="xMidYMid"
-                      width="72"
-                      height="72"
-                      viewBox="0 0 72 72"
-                      role="img"
-                    >
-                      <path
-                        d="M49 53L23 53C21 53 20 52 20 50L20 22C20 20 21 19 23 19L49 19C51 19 52 20 52 22L52 50C52 52 51 53 49 53L49 53 49 53ZM28 48L44 48C45 48 46 47 46 46 46 45 45 44 44 44L28 44C27 44 26 45 26 46 26 47 27 48 28 48L28 48 28 48ZM46 25L26 25 26 39 46 39 46 25 46 25Z"
-                        fill="#333333"
-                      />
-                    </svg>
-                  </a>
-                  {/* <ToolTip title={"Small with info"} /> */}
+                  <ToolTip title={"Small with info"}>
+                    <a href="/">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid"
+                        width="72"
+                        height="72"
+                        viewBox="0 0 72 72"
+                        role="img"
+                      >
+                        <path
+                          d="M49 53L23 53C21 53 20 52 20 50L20 22C20 20 21 19 23 19L49 19C51 19 52 20 52 22L52 50C52 52 51 53 49 53L49 53 49 53ZM28 48L44 48C45 48 46 47 46 46 46 45 45 44 44 44L28 44C27 44 26 45 26 46 26 47 27 48 28 48L28 48 28 48ZM46 25L26 25 26 39 46 39 46 25 46 25Z"
+                          fill="#333333"
+                        />
+                      </svg>
+                    </a>
+                  </ToolTip>
                 </li>
                 <li>
-                  <a href="/">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      preserveAspectRatio="xMidYMid"
-                      width="72"
-                      height="72"
-                      viewBox="0 0 72 72"
-                      role="img"
-                    >
-                      <path
-                        d="M57 61L15 61C13 61 12 60 12 58L12 14C12 12 13 11 15 11L57 11C59 11 60 12 60 14L60 58C60 60 59 61 57 61L57 61ZM20 56L52 56C53 56 54 55 54 54 54 53 53 52 52 52L20 52C19 52 18 53 18 54 18 55 19 56 20 56L20 56ZM54 17L18 17 18 47 54 47 54 17 54 17Z"
-                        fill="#333333"
-                      />
-                    </svg>
-                    {/* <ToolTip title={"Large with info"} /> */}
-                  </a>
+                  <ToolTip title={"Large with info"}>
+                    <a href="/">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid"
+                        width="72"
+                        height="72"
+                        viewBox="0 0 72 72"
+                        role="img"
+                      >
+                        <path
+                          d="M57 61L15 61C13 61 12 60 12 58L12 14C12 12 13 11 15 11L57 11C59 11 60 12 60 14L60 58C60 60 59 61 57 61L57 61ZM20 56L52 56C53 56 54 55 54 54 54 53 53 52 52 52L20 52C19 52 18 53 18 54 18 55 19 56 20 56L20 56ZM54 17L18 17 18 47 54 47 54 17 54 17Z"
+                          fill="#333333"
+                        />
+                      </svg>
+                    </a>
+                  </ToolTip>
                 </li>
                 <li>
-                  <a href="/">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      preserveAspectRatio="xMidYMid"
-                      width="72"
-                      height="72"
-                      viewBox="0 0 72 72"
-                      role="img"
-                    >
-                      <path
-                        d="M49 49L23 49C21 49 20 48 20 46L20 26C20 24 21 23 23 23L49 23C51 23 52 24 52 26L52 46C52 48 51 49 49 49L49 49ZM46 29L26 29 26 43 46 43 46 29 46 29Z"
-                        fill="#333333"
-                      />
-                    </svg>
-                    {/* <ToolTip title={"Small without info"} /> */}
-                  </a>
+                  <ToolTip title={"Small without info"}>
+                    <a href="/">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid"
+                        width="72"
+                        height="72"
+                        viewBox="0 0 72 72"
+                        role="img"
+                      >
+                        <path
+                          d="M49 49L23 49C21 49 20 48 20 46L20 26C20 24 21 23 23 23L49 23C51 23 52 24 52 26L52 46C52 48 51 49 49 49L49 49ZM46 29L26 29 26 43 46 43 46 29 46 29Z"
+                          fill="#333333"
+                        />
+                      </svg>
+                    </a>
+                  </ToolTip>
                 </li>
                 <li>
-                  <a href="/">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      preserveAspectRatio="xMidYMid"
-                      width="72"
-                      height="72"
-                      viewBox="0 0 72 72"
-                      role="img"
-                    >
-                      <path
-                        d="M57 57L15 57C13 57 12 56 12 54L12 18C12 16 13 15 15 15L57 15C59 15 60 16 60 18L60 54C60 56 59 57 57 57L57 57ZM54 21L18 21 18 51 54 51 54 21 54 21Z"
-                        fill="#333333"
-                      />
-                    </svg>
-                    {/* <ToolTip title={"Large without info"} /> */}
-                  </a>
+                  <ToolTip title={"Large without info"}>
+                    <a href="/">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        preserveAspectRatio="xMidYMid"
+                        width="72"
+                        height="72"
+                        viewBox="0 0 72 72"
+                        role="img"
+                      >
+                        <path
+                          d="M57 57L15 57C13 57 12 56 12 54L12 18C12 16 13 15 15 15L57 15C59 15 60 16 60 18L60 54C60 56 59 57 57 57L57 57ZM54 21L18 21 18 51 54 51 54 21 54 21Z"
+                          fill="#333333"
+                        />
+                      </svg>
+                    </a>
+                  </ToolTip>
                 </li>
               </ul>
             </div>
