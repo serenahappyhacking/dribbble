@@ -5,24 +5,26 @@ class SmallInfo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isShow: 0
+      isShow: ""
     };
   }
 
-  handleMouseEnter = (index, e) => {
+  handleMouseOver = index => {
     this.setState({
-      isShow: 1
+      isShow: index
     });
   };
 
-  handleMouseOut = e => {
+  handleMouseOut = index => {
     this.setState({
-      isShow: 0
+      isShow: ""
     });
   };
 
   render() {
     const { content } = this.props;
+    const { isShow } = this.state;
+
     if (content.length > 0) {
       return (
         <ul className="small_info">
@@ -30,8 +32,8 @@ class SmallInfo extends Component {
             <li className="each_item" key={index}>
               <div
                 className="display_imgs"
-                onMouseEnter={e => this.handleMouseEnter(index, e)}
-                onMouseOut={e => this.handleMouseOut(index, e)}
+                onMouseEnter={() => this.handleMouseOver(index)}
+                onMouseLeave={() => this.handleMouseOut(index)}
               >
                 <div className="img">
                   <img src={item.src} alt="main img is loading..." />
@@ -48,13 +50,14 @@ class SmallInfo extends Component {
                       <span>{item.favoCount}</span>
                     </div>
                   </div>
-                  <div
-                    className="actions"
-                    style={{ opacity: this.state.isShow }}
-                  >
-                    <button>Save</button>
-                    <button>Like</button>
-                  </div>
+                  {isShow === index ? (
+                    <div className="actions" style={{ opacity: 1 }}>
+                      <button>Save</button>
+                      <button>Like</button>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
               </div>
               <div className="hover_card">
