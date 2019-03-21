@@ -1,37 +1,37 @@
 /* Create responsive image gallery*/
 
-/* .small_info {
+/* .large_info {
   display: grid;
   grid-gap: 2em;
   grid-template-columns: repeat(auto-fit, 212px);
   max-width: 1676px;
   margin: 0 auto;
 } */
-.small_info {
+.large_info {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
   grid-gap: 2em;
   margin: 2.5em 4em 0;
 }
 
-.small_info .display_imgs {
+.large_info .display_imgs {
   height: 191px;
   background-color: white;
   position: relative;
 }
 
-.small_info .display_imgs .img {
+.large_info .display_imgs .img {
   height: 85%;
   display: flex;
   justify-content: center;
   padding: 0.8em 10px 0 10px;
 }
 
-.small_info .display_imgs .info {
+.large_info .display_imgs .info {
   height: 15%;
 }
 
-.small_info .display_imgs .actions {
+.large_info .display_imgs .actions {
   position: absolute;
   bottom: 0;
   width: 100%;
@@ -41,32 +41,32 @@
   transition: opacity 0.1s ease-in;
 }
 
-.small_info .display_imgs .actions button {
+.large_info .display_imgs .actions button {
   width: 39%;
   border: 1px solid #80808024;
   margin: 6px;
   border-radius: 4px;
 }
 
-.small_info .hover_card {
+.large_info .hover_card {
   display: flex;
   align-items: center;
   margin-top: 0.7em;
 }
 
-.small_info .hover_card img {
+.large_info .hover_card img {
   width: 16px;
   border-radius: 50%;
 }
 
-.small_info .hover_card .author {
+.large_info .hover_card .author {
   font-weight: 500;
   font-size: 13px;
   color: #3a8bbe;
   margin: 0 4px 0 2px;
 }
 
-.small_info .hover_card .badge_link {
+.large_info .hover_card .badge_link {
   background-color: #ccc;
   color: #fff;
   border-radius: 3px;
@@ -77,7 +77,7 @@
   /* opacity: 0; */
 }
 
-.small_info .tools {
+.large_info .tools {
   position: absolute;
   font-size: 11px;
   right: 10px;
@@ -85,24 +85,24 @@
   color: #aaa;
 }
 
-.small_info .tools > div {
+.large_info .tools > div {
   display: inline-block;
   margin: 0 0.3em;
 }
 
-.small_info .tools .view > span {
+.large_info .tools .view > span {
   background-image: url("../assets/icon-views-sm.png");
   background-repeat: no-repeat;
   padding-left: 1.8em;
 }
 
-.small_info .tools .comment > span {
+.large_info .tools .comment > span {
   background-image: url("../assets/icon-comments.png");
   background-repeat: no-repeat;
   padding-left: 1.8em;
 }
 
-.small_info .tools .favo > span {
+.large_info .tools .favo > span {
   background-image: url("../assets/icon-hearts.png");
   background-repeat: no-repeat;
   padding-left: 1.8em;

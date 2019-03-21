@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Content.css";
 import SmallInfo from "./SmallInfo/SmallInfo";
+import LargeInfo from "./LargeInfo/LargeInfo";
 
 class Content extends Component {
   render() {
@@ -15,6 +16,7 @@ class Content extends Component {
           you already know from Twitter or Facebook.
         </p>
         <SmallInfo content={content} />
+        <LargeInfo content={content} />
       </div>
     );
   }
