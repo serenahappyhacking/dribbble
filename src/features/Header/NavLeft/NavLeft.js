@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./NavLeft.css";
-import Dropdown from "../Dropdown/Dropdown";
+import Dropdown from "../../common/Dropdown/Dropdown";
 
 class NavLeft extends Component {
   render() {

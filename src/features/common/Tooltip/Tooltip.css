@@ -1,0 +1,29 @@
+.tooltip {
+  max-width: 250px;
+  position: absolute;
+  bottom: 70px;
+}
+
+.tooltip .tooltip_arrow {
+  width: 0;
+  height: 0;
+  border-width: 5px 5px 0;
+  border-style: solid;
+  border-color: transparent;
+  border-top-color: hotpink;
+  position: absolute;
+  bottom: -3px;
+  left: 12px;
+}
+
+.tooltip .tooltip_content {
+  min-width: 130px;
+  min-height: 30px;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  background-color: hotpink;
+  color: #fff;
+  font-size: 1em;
+  border-radius: 4px;
+}

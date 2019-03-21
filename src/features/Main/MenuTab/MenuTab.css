@@ -15,21 +15,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 }
 
 .menutab .navbar li {
   padding: 0 1.2em;
 }
 
+.menutab .navbar:first-child {
+  position: relative;
+}
+
 .menutab .navbar .droplist {
   position: absolute;
-  width: 200px;
   background-color: #fbfbfb;
   border-radius: 4px;
   box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.2);
-  padding: 0.5em 0 0.5em 1em;
-  margin: 1em 0 0 -1em;
+  padding: 0.5em;
 }
 
 .menutab .action_button {
@@ -39,12 +40,11 @@
 .menutab .action_menu_inner {
   background-color: #333;
   border-radius: 4px;
-  padding: 1em 0 0.5em 0;
-  width: 220px;
   position: absolute;
   right: 2.5em;
   top: 2.2em;
   border-top-right-radius: 0;
+  padding: 0.7em;
 }
 
 .menutab .action_menu_container {
@@ -72,16 +72,18 @@
   font-size: 0.8rem;
   text-transform: uppercase;
   color: #ccc;
+  letter-spacing: 0.1em;
 }
 
 .menutab .display_options {
   display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0.3em;
 }
 
 .menutab .display_options li {
   background-color: #505050;
-  padding-left: 5px;
-  margin-left: 5px;
 }
 
 .menutab .display_options li:hover {

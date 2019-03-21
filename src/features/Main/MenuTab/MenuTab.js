@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./MenuTab.css";
+import ToolTip from "../../common/Tooltip/Tooltip";
 
 class MenuTab extends Component {
   constructor(props) {
@@ -11,28 +12,41 @@ class MenuTab extends Component {
     };
   }
 
-  handleMouseEnter = property => {
-    const obj = {};
-    obj[property] = "block";
-    obj.icon_hover = true;
-    this.setState(obj);
+  handleMouseEnterNavbar = () => {
+    this.setState({
+      isShow: "block"
+    });
   };
 
-  handleMouseLeave = property => {
-    const obj = {};
-    obj[property] = "none";
-    obj.icon_hover = false;
-    this.setState(obj);
+  handleMouseLeaveNavbar = () => {
+    this.setState({
+      isShow: "none"
+    });
+  };
+
+  handleMouseEnterOptions = () => {
+    this.setState({
+      optionsIsShow: "block",
+      icon_hover: true
+    });
+  };
+
+  handleMouseLeaveOptions = () => {
+    this.setState({
+      optionsIsShow: "none",
+      icon_hover: false
+    });
   };
 
   render() {
+    console.log(this.state);
     return (
       <div className="menutab">
         <div className="menutab_item" />
         <ul className="menutab_item navbar">
           <li
-            onMouseEnter={() => this.handleMouseEnter("isShow")}
-            onMouseLeave={() => this.handleMouseLeave("isShow")}
+            onMouseEnter={this.handleMouseEnterNavbar}
+            onMouseLeave={this.handleMouseLeaveNavbar}
           >
             <a href="/following">Following</a>
             <ul className="droplist" style={{ display: this.state.isShow }}>
@@ -48,12 +62,12 @@ class MenuTab extends Component {
             <a href="/designers/friends">Find Friends</a>
           </li>
         </ul>
-        <div
-          className="menutab_item action_menu"
-          onMouseEnter={() => this.handleMouseEnter("optionsIsShow")}
-          onMouseLeave={() => this.handleMouseLeave("optionsIsShow")}
-        >
-          <div className="action_button">
+        <div className="menutab_item action_menu">
+          <div
+            className="action_button"
+            onMouseEnter={this.handleMouseEnterOptions}
+            onMouseLeave={this.handleMouseLeaveOptions}
+          >
             <div className="action_menu_container">
               <span
                 className={`action_icon ${
@@ -83,6 +97,7 @@ class MenuTab extends Component {
                       />
                     </svg>
                   </a>
+                  {/* <ToolTip title={"Small with info"} /> */}
                 </li>
                 <li>
                   <a href="/">
@@ -99,6 +114,7 @@ class MenuTab extends Component {
                         fill="#333333"
                       />
                     </svg>
+                    {/* <ToolTip title={"Large with info"} /> */}
                   </a>
                 </li>
                 <li>
@@ -116,6 +132,7 @@ class MenuTab extends Component {
                         fill="#333333"
                       />
                     </svg>
+                    {/* <ToolTip title={"Small without info"} /> */}
                   </a>
                 </li>
                 <li>
@@ -133,6 +150,7 @@ class MenuTab extends Component {
                         fill="#333333"
                       />
                     </svg>
+                    {/* <ToolTip title={"Large without info"} /> */}
                   </a>
                 </li>
               </ul>

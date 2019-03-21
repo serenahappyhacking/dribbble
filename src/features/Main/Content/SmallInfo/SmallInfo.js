@@ -2,6 +2,25 @@ import React, { Component } from "react";
 import "./SmallInfo.css";
 
 class SmallInfo extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      isShow: 0
+    };
+  }
+
+  handleMouseEnter = (index, e) => {
+    this.setState({
+      isShow: 1
+    });
+  };
+
+  handleMouseOut = e => {
+    this.setState({
+      isShow: 0
+    });
+  };
+
   render() {
     const { content } = this.props;
     if (content.length > 0) {
@@ -9,7 +28,11 @@ class SmallInfo extends Component {
         <ul className="small_info">
           {content.map((item, index) => (
             <li className="each_item" key={index}>
-              <div className="display_imgs">
+              <div
+                className="display_imgs"
+                onMouseEnter={e => this.handleMouseEnter(index, e)}
+                onMouseOut={e => this.handleMouseOut(index, e)}
+              >
                 <div className="img">
                   <img src={item.src} alt="main img is loading..." />
                 </div>
@@ -25,7 +48,10 @@ class SmallInfo extends Component {
                       <span>{item.favoCount}</span>
                     </div>
                   </div>
-                  <div className="actions">
+                  <div
+                    className="actions"
+                    style={{ opacity: this.state.isShow }}
+                  >
                     <button>Save</button>
                     <button>Like</button>
                   </div>
@@ -34,9 +60,13 @@ class SmallInfo extends Component {
               <div className="hover_card">
                 <a href="/">
                   <img src={item.nameIcon} alt="" />
-                  <span>{item.author}</span>
                 </a>
-                <a href="/">{item.team}</a>
+                <a href="/" className="author">
+                  {item.author}
+                </a>
+                <a href="/" className="badge_link">
+                  {item.team}
+                </a>
               </div>
             </li>
           ))}

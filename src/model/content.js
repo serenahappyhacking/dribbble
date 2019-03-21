@@ -1,13 +1,13 @@
 import nameIcon from "../features/Main/Content/assets/icon-name.png";
 
 const contentSrc = [
-  "https://cdn.dribbble.com/users/32512/screenshots/6…/flights_design_milkinside_for_natural_teaser.png",
+  "https://cdn.dribbble.com/users/418188/screenshots/6191257/completist_digital_illustration_tubik_teaser.png",
   "https://cdn.dribbble.com/users/541143/screenshots/6115502/_well__fitness_appp_teaser.png",
   "https://cdn.dribbble.com/users/1133834/screenshots/6113296/shot_teaser.png",
-  "https://cdn.dribbble.com/users/1139587/screenshots…96/syntech_logo_animation_shot_2019_02_teaser.gif",
+  "https://cdn.dribbble.com/users/86597/screenshots/6190722/tigr_teaser.jpg",
+  "https://cdn.dribbble.com/users/1622632/screenshots/6191619/15k_teaser.png",
   "https://cdn.dribbble.com/users/992274/screenshots/6114473/phone_hand_kit8-net_teaser.jpg",
   "https://cdn.dribbble.com/users/452635/screenshots/6113380/152.7.pre_teaser.png",
-  "https://cdn.dribbble.com/users/418188/screenshots/…921/moonworkers_creating_profile_tubik_teaser.png",
   "https://cdn.dribbble.com/users/452635/screenshots/6113753/152.8.pre_teaser.png",
   "https://cdn.dribbble.com/users/765567/screenshots/6113689/_____2_teaser.png",
   "https://cdn.dribbble.com/users/443226/screenshots/6115248/meal_plan_application_design_teaser.jpg",

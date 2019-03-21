@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import profile from "../assets/profile.jpg";
 import upload from "../assets/upload.png";
-import Dropdown from "../Dropdown/Dropdown";
+import Dropdown from "../../common/Dropdown/Dropdown";
 import "./NavRight.css";
 
 class NavRight extends Component {
