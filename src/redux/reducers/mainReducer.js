@@ -4,7 +4,10 @@ import {
   FETCH_DRIBBBLES_IMAGES
 } from "../action";
 
-const initialState = { content: [] };
+const initialState = {
+  content: [],
+  optionsAreShow: { smallInfoIsShow: true, largeInfoIsShow: false }
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {

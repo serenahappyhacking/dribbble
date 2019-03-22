@@ -12,7 +12,8 @@ class NavRight extends Component {
         <ul className="nav_right">
           <li className="t_gopro">
             <a href="/pro">
-              <span>Get more out of Dribbble - Go Pro</span>
+              <span>Get more out of Dribbble - </span>
+              <span>Go Pro</span>
             </a>
           </li>
           <li className="t_profile">

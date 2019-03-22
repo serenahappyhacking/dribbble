@@ -8,7 +8,9 @@ class MenuTab extends Component {
     this.state = {
       isShow: "none",
       optionsIsShow: "none",
-      icon_hover: false
+      icon_hover: false,
+      smallInfoColor: "",
+      largeInfoColor: ""
     };
   }
 
@@ -38,7 +40,24 @@ class MenuTab extends Component {
     });
   };
 
+  handleClickSmallInfo = (a, e) => {
+    this.setState({
+      smallInfoColor: "#999"
+    });
+    a.smallInfoIsShow = true;
+    a.largeInfoIsShow = false;
+  };
+
+  handleClickLargeInfo = a => {
+    this.setState({
+      largeInfoColor: "#999"
+    });
+    a.smallInfoIsShow = false;
+    a.largeInfoIsShow = true;
+  };
+
   render() {
+    const { optionsAreShow } = this.props;
     return (
       <div className="menutab">
         <div className="menutab_item" />
@@ -48,6 +67,9 @@ class MenuTab extends Component {
             onMouseLeave={this.handleMouseLeaveNavbar}
           >
             <a href="/following">Following</a>
+            <a href="/" className="following_icon">
+              <span> > </span>
+            </a>
             <ul className="droplist" style={{ display: this.state.isShow }}>
               <li>
                 <a href="/serenahacking/likes">Shots You Like</a>
@@ -80,7 +102,10 @@ class MenuTab extends Component {
             >
               <span>display options</span>
               <ul className="display_options">
-                <li>
+                <li
+                  onClick={() => this.handleClickSmallInfo(optionsAreShow)}
+                  style={{ backgroundColor: this.state.smallInfoColor }}
+                >
                   <ToolTip title={"Small with info"}>
                     <a href="/">
                       <svg
@@ -99,7 +124,10 @@ class MenuTab extends Component {
                     </a>
                   </ToolTip>
                 </li>
-                <li>
+                <li
+                  onClick={e => this.handleClickLargeInfo(optionsAreShow, e)}
+                  style={{ backgroundColor: this.state.largeInfoColor }}
+                >
                   <ToolTip title={"Large with info"}>
                     <a href="/">
                       <svg

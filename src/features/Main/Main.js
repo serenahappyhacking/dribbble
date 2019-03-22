@@ -8,13 +8,18 @@ import "./Main.css";
 class Main extends Component {
   componentDidMount() {
     this.props.onFetchDribbbles();
+    console.log(this.props.content);
+    console.log(this.props.optionsAreShow);
   }
 
   render() {
     return (
       <div className="dribbble_main">
-        <MenuTab />
-        <Content content={this.props.content} />
+        <MenuTab optionsAreShow={this.props.optionsAreShow} />
+        <Content
+          content={this.props.content}
+          optionsAreShow={this.props.optionsAreShow}
+        />
       </div>
     );
   }
@@ -22,7 +27,8 @@ class Main extends Component {
 
 const mapStateToProps = state => {
   return {
-    content: state.main.content
+    content: state.main.content,
+    optionsAreShow: state.main.optionsAreShow
   };
 };
 

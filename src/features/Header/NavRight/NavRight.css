@@ -1,9 +1,6 @@
 .nav_right {
   display: inline-flex;
-  justify-content: space-between;
   align-items: center;
-  width: 30%;
-  float: right;
 }
 
 .nav_right > .t_profile {

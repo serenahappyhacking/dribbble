@@ -3,9 +3,24 @@ import "./Content.css";
 import SmallInfo from "./SmallInfo/SmallInfo";
 import LargeInfo from "./LargeInfo/LargeInfo";
 
+function Dribbles(content, optionsAreShow) {
+  if (content && optionsAreShow.smallInfoIsShow) {
+    console.log(optionsAreShow);
+    return <SmallInfo content={content} />;
+  } else if (content && optionsAreShow.largeInfoIsShow) {
+    return <LargeInfo content={content} />;
+    // } else if (optionsAreShow.smallNoInfoIsShow === true) {
+    // return <SmallNoInfo content={content} />;
+  } else {
+    // return <LargeNoInfo content={content} />;
+    return "";
+  }
+}
+
 class Content extends Component {
   render() {
-    const { content } = this.props;
+    // console.log(this.props);
+    const { content, optionsAreShow } = this.props;
     return (
       <div className="dribbbles">
         <h2>
@@ -15,8 +30,7 @@ class Content extends Component {
           <a href="/designers/friends">Frind friends</a>
           you already know from Twitter or Facebook.
         </p>
-        <SmallInfo content={content} />
-        <LargeInfo content={content} />
+        <Dribbles content={content} optionsAreShow={optionsAreShow} />
       </div>
     );
   }

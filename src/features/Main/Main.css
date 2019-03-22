@@ -1,3 +1,13 @@
 .dribbble_main {
   background-color: #f4f4f4;
 }
+
+.menutab_item.navbar {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 800px) {
+  .menutab_item.navbar {
+    font-size: 0.75rem;
+  }
+}
