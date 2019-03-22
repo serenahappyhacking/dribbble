@@ -67,6 +67,14 @@ export const fetchMainDribbles = () => {
   };
 };
 
+export const CHANGE_LAYOUT = "CHANGE_LAYOUT";
+export const changeLayout = layout => {
+  return {
+    type: CHANGE_LAYOUT,
+    layout
+  };
+};
+
 /* Main */
 export const SAVE_IMAGE = "SAVE_IMAGE";
 export const saveImage = id => ({

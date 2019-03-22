@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import "./MenuTab.css";
 import ToolTip from "../../common/Tooltip/Tooltip";
+import {
+  SMALL_INFO_SELECTED,
+  LARGE_INFO_SELECTED
+} from "../../../constants/layoutConst";
+import LargeInfo from "../Content/LargeInfo/LargeInfo";
 
 class MenuTab extends Component {
   constructor(props) {
@@ -8,9 +13,7 @@ class MenuTab extends Component {
     this.state = {
       isShow: "none",
       optionsIsShow: "none",
-      icon_hover: false,
-      smallInfoColor: "",
-      largeInfoColor: ""
+      icon_hover: false
     };
   }
 
@@ -40,24 +43,8 @@ class MenuTab extends Component {
     });
   };
 
-  handleClickSmallInfo = (a, e) => {
-    this.setState({
-      smallInfoColor: "#999"
-    });
-    a.smallInfoIsShow = true;
-    a.largeInfoIsShow = false;
-  };
-
-  handleClickLargeInfo = a => {
-    this.setState({
-      largeInfoColor: "#999"
-    });
-    a.smallInfoIsShow = false;
-    a.largeInfoIsShow = true;
-  };
-
   render() {
-    const { optionsAreShow } = this.props;
+    const { onChangeLayout } = this.props;
     return (
       <div className="menutab">
         <div className="menutab_item" />
@@ -102,12 +89,15 @@ class MenuTab extends Component {
             >
               <span>display options</span>
               <ul className="display_options">
-                <li
-                  onClick={() => this.handleClickSmallInfo(optionsAreShow)}
-                  style={{ backgroundColor: this.state.smallInfoColor }}
-                >
+                <li>
                   <ToolTip title={"Small with info"}>
-                    <a href="/">
+                    <a
+                      href="/"
+                      onClick={e => {
+                        e.preventDefault();
+                        onChangeLayout(SMALL_INFO_SELECTED);
+                      }}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="xMidYMid"
@@ -124,12 +114,15 @@ class MenuTab extends Component {
                     </a>
                   </ToolTip>
                 </li>
-                <li
-                  onClick={e => this.handleClickLargeInfo(optionsAreShow, e)}
-                  style={{ backgroundColor: this.state.largeInfoColor }}
-                >
+                <li>
                   <ToolTip title={"Large with info"}>
-                    <a href="/">
+                    <a
+                      href="/"
+                      onClick={e => {
+                        e.preventDefault();
+                        onChangeLayout(LARGE_INFO_SELECTED);
+                      }}
+                    >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         preserveAspectRatio="xMidYMid"

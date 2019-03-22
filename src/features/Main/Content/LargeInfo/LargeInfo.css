@@ -9,13 +9,13 @@
 } */
 .large_info {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 2em;
-  margin: 2.5em 4em 0;
+  margin: 2.5em 3em 0;
 }
 
 .large_info .display_imgs {
-  height: 191px;
+  height: 282px;
   background-color: white;
   position: relative;
 }
