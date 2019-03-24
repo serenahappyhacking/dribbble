@@ -1,9 +1,9 @@
 import React, { Component } from "react";
+import "./Main.css";
 import MenuTab from "./MenuTab/MenuTab";
 import Content from "./Content/Content";
 import { connect } from "react-redux";
 import { fetchMainDribbles, changeLayout } from "../../redux/action";
-import "./Main.css";
 
 class Main extends Component {
   componentDidMount() {
@@ -19,6 +19,7 @@ class Main extends Component {
         />
         <Content
           content={this.props.content}
+          bigContent={this.props.bigContent}
           selectedLayout={this.props.selectedLayout}
         />
       </div>
@@ -29,6 +30,7 @@ class Main extends Component {
 const mapStateToProps = state => {
   return {
     content: state.main.content,
+    bigContent: state.main.bigContent,
     selectedLayout: state.main.selectedLayout
   };
 };

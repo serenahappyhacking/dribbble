@@ -3,7 +3,7 @@ import NavLeft from "./NavLeft/NavLeft";
 import NavRight from "./NavRight/NavRight";
 import logo from "./assets/logo.png";
 import { connect } from "react-redux";
-import { fetchNavData, fetchSearchForm } from "../../redux/action";
+import { fetchNavData } from "../../redux/action";
 import "./Header.css";
 
 class Header extends Component {
@@ -40,9 +40,6 @@ const mapDispatchToProps = dispatch => {
   return {
     onFetchNavData: () => {
       dispatch(fetchNavData());
-    },
-    onSearchForm: text => {
-      dispatch(fetchSearchForm(text));
     }
   };
 };

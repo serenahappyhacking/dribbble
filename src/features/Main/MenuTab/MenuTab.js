@@ -5,7 +5,6 @@ import {
   SMALL_INFO_SELECTED,
   LARGE_INFO_SELECTED
 } from "../../../constants/layoutConst";
-import LargeInfo from "../Content/LargeInfo/LargeInfo";
 
 class MenuTab extends Component {
   constructor(props) {
