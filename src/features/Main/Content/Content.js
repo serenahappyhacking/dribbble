@@ -22,7 +22,6 @@ const Dribbles = ({ content, bigContent, selectedLayout }) => {
 class Content extends Component {
   render() {
     const { content, bigContent, selectedLayout } = this.props;
-    console.log(bigContent);
     return (
       <div className="dribbbles">
         <h2>

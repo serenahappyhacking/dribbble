@@ -6,7 +6,7 @@ import "./NavRight.css";
 
 class NavRight extends Component {
   render() {
-    const { navItems, onSearchForm } = this.props;
+    const { navItems } = this.props;
     if (navItems.profile) {
       return (
         <ul className="nav_right">
@@ -31,7 +31,7 @@ class NavRight extends Component {
               <input
                 className="search_text"
                 placeholder="Search"
-                onInput={onSearchForm}
+                // onInput={onSearchForm}
               />
             </form>
           </li>

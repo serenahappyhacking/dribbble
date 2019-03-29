@@ -9,13 +9,13 @@ class SmallInfo extends Component {
     };
   }
 
-  handleMouseOver = index => {
+  handleMouseEnter = index => {
     this.setState({
       isShow: index
     });
   };
 
-  handleMouseOut = index => {
+  handleMouseLeave = index => {
     this.setState({
       isShow: ""
     });
@@ -32,8 +32,8 @@ class SmallInfo extends Component {
             <li className="each_item" key={index}>
               <div
                 className="display_imgs"
-                onMouseEnter={() => this.handleMouseOver(index)}
-                onMouseLeave={() => this.handleMouseOut(index)}
+                onMouseEnter={() => this.handleMouseEnter(index)}
+                onMouseLeave={() => this.handleMouseLeave(index)}
               >
                 <div className="img">
                   <img src={item.src} alt="main img is loading..." />
@@ -55,9 +55,7 @@ class SmallInfo extends Component {
                       <button>Save</button>
                       <button>Like</button>
                     </div>
-                  ) : (
-                    ""
-                  )}
+                  ) : null}
                 </div>
               </div>
               <div className="hover_card">
